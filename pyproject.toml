@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "jenkins-python-example"
+version = "0.1.0"
+description = "An example Django application and Jenkins pipeline"
+authors = ["Daniel Formel <dkfinmv@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^2.2"
+djangorestframework = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.0"
+tox = "^3.13"
+flake8 = "^3.7"
+black = {version = "^18.3-alpha.0", allows-prereleases = true}
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.black]
+line-length = "120"
+target_version = ["py37"]
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | build
+    | dist
+  )/
+)
+'''
